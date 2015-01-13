@@ -17,14 +17,20 @@ def isPrime(n):
 
 maxP = 1
 leftN = n
-for i in range(2,int(math.sqrt(n)+1)):
+while leftN % 2 == 0:
+	leftN /= 2
+	if maxP < 2:
+		maxP = 2
+
+i = 3
+while True:
 	if isPrime(i):
 		while leftN % i == 0:
 			leftN /= i
-			print(i)
 			if maxP < i:
 				maxP = i
 		if leftN == 1:
 			break
-print ""
+	i += 2
+
 print maxP
