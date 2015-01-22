@@ -4,12 +4,11 @@ import math
 
 def getDivisor(n):	# not for 1
 	l = [1]
-	for i in range(2,int(math.sqrt(n))):
+	for i in range(2,int(math.sqrt(n))+1):
 		if n%i == 0:
 			l.append(i)
-			l.append(n/i)
-	if math.pow(int(math.sqrt(n)), 2) == n:
-		l.append(int(math.sqrt(n)))
+			if i != n/i:
+				l.append(n/i)
 	return l
 
 l1 = []
